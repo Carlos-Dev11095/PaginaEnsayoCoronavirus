@@ -54,3 +54,61 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+
+
+
+
+// Codigo para formulario
+
+
+
+function validar(){
+    //alert("entro en funcion validar");
+    var nombre,apellidos,correo, clave,expresion;
+    nombre=document.getElementById("nombres").value;
+    apellidos=document.getElementById("apellidos").value;
+    telefono=document.getElementById("telefonos").value;
+    correo=document.getElementById("correo").value;
+    clave=document.getElementById("password").value;
+  
+    
+  
+    if(nombre === "" || apellidos==="" || correo==="" || clave=== ""){
+      alert("El formulario necesita estar rellenado");
+      return false;
+    }
+    else if(nombre.length>40){
+  alert("El nombre es muy largo");
+  return false;
+    }
+  
+  
+    else if(apellidos.length>80){
+      alert("Los apellidos son muy largos");
+      return false;
+        }
+  
+        else if(correo.length>20){
+          alert("El correo es muy largo");
+          return false; 
+        }
+         
+       else if(clave.length>20){
+        alert("El correo es muy largo");
+            return false;  
+       }
+      
+       else if(telefono.length>10){
+        alert("El telefono es muy largo");
+            return false;  
+       }
+  
+  
+       else if(isNaN(telefono)){
+        alert("Los datos ingresados no son numeros");
+            return false;  
+       }
+  
+  
+  }

@@ -10482,3 +10482,65 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+
+
+/* Codigo para Formulario */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  .form-register{
+    width: 500px;
+    background: #2365c2;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: turquoise;
+  
+  }
+  
+  
+  .form-register h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .controls{
+  width: 100%;
+  background: rgb(66, 51, 22);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 3px;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+  
+  }
+  
+  .form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 12;
+  
+  }
+  
+  #botones{
+  width: 100%;
+  background: darkblue;
+  border: 1px;
+  padding: 12px;
+  color: white;
+  margin: 15px 0;
+  font-size: 16px;
+  
+  }
+  
+  
