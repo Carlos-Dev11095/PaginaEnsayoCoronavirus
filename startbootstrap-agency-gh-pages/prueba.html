@@ -1,0 +1,157 @@
+<!DOCTYPE html><html>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Covid-19</title>
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+		  	
+	<style> 
+  	body {
+	    	padding: 0;
+	    	margin: 0;
+		}
+		html, body, #map {
+    		height: 100%;
+		}
+
+.info
+  {
+        padding: 6px 8px;
+        font: 13px/16px Verdana, Geneva, sans-serif;
+        background: white;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+
+   .legend {
+        line-height: 35px;
+        padding:7px;
+        color: #555;
+       }
+
+   .legend i {
+        width: 15px;
+        height: 15px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+      }
+
+    .circle
+	 {
+	float: left;
+	border: 1px solid #222;
+	border-radius: 50%;
+	 }
+
+	 .legend .colorcircle {
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	margin-top: 0px;
+	 }
+	.legend .circlepadding {
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.85);
+	}
+
+	</style> 
+</head>  
+<body>
+	 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+	 <script src="covid.js"></script>
+		
+
+	 <div id ="map"> </div> 
+	<script>
+	var map = L.map('map', {
+		center: [40, -5],
+		zoom: 3,
+	});
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.Datos: Universidad Johns Hopkins (JHU)',
+			}).addTo(map);
+
+	var MarkerOptions = {
+    fillColor: "#FF4000",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+	};
+
+	function getRadius(r) { 
+		return r >= 100000 ? 25 : 
+		r >= 10000  ? 15 : 
+		r >= 5000  ? 7 : 
+		r >= 1000 ? 3:  
+				3; 
+	};
+
+	function estilo_covid (feature) {
+		return{
+			radius: getRadius(feature.properties.Confirmed), 
+			};
+	};
+	function popup_covid (feature, layer) {
+		layer.bindPopup("<div style=text-align:center><h3>"+feature.properties.Country_Region+
+        "<h3></div><hr><table><tr><td>Confirmed: "+feature.properties.Confirmed+
+        "</td></tr><tr><td>Deaths: "+feature.properties.Deaths+
+        "</td></tr><tr><td>Recovered: "+feature.properties.Recovered+        
+        "</td></tr></table>",
+        {minWidth: 150, maxWidth: 200});				
+		};
+
+ 	var covidMundo = L.geoJSON(covid, {
+				pointToLayer: function (feature, latlng) {
+						return L.circleMarker(latlng, MarkerOptions);
+					},	
+				style:estilo_covid,
+				onEachFeature: popup_covid				
+		});
+	map.addLayer(covidMundo);
+
+
+//Leyenda-----------------------------------------------------------
+
+ var legend = L.control({position: 'bottomright'});
+
+ legend.onAdd = function (map) {
+
+ var div = L.DomUtil.create('div', 'info legend');
+ var grades = [1000, 5000, 10000, 100000];
+ var labels = ['<strong>Número de afectados</strong>'];
+ var categories = ['< 5000','5000-10000','10000-100000','>100000'];
+
+ for (var i = 0; i < grades.length; i++) {
+        var grade = grades[i];//*0.5;
+   labels.push(
+        '<i class="circlepadding" style="width: '+Math.max(8,(7-2.2*getRadius(grade)))+'px;"></i> <i style="background: #FF4000; width: '+getRadius(grade)*2+'px; height: '+getRadius(grade)*2+'px; border-radius: 50%; margin-top: '+Math.max(0,(9-getRadius(grade)))+'px;"></i><i class="circlepadding" style="width: '+Math.max(2,(25-2*getRadius(grade)))+'px;"></i> ' + categories[i]);
+   }
+ div.innerHTML = labels.join('<br>');
+ return div;
+ };
+ legend.addTo(map);
+
+ // Insertando un título en el mapa---------------------------------
+
+	var title = L.control();
+	 
+	title.onAdd = function (map) {
+		var div = L.DomUtil.create('div', 'info');
+		    div.innerHTML +=
+		    '<h2>COVID-19</h2>Número de afectados por país.(23-04-2020)';
+		 return div;
+	};
+	 
+	title.addTo(map);
+	
+	</script>
+	</body> 
+</html> 
