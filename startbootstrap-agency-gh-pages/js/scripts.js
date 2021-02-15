@@ -100,15 +100,20 @@ function validar(){
        }
       
        else if(telefono.length>10){
-        alert("El telefono es muy largo");
+        alert("El teléfono es muy largo");
             return false;  
        }
   
   
        else if(isNaN(telefono)){
-        alert("Los datos ingresados no son numeros");
+        alert("El campo teléfono solo necesita numeros");
             return false;  
        }
+       else {
+        location.href="https://www.who.int/es/";
+      }
   
-  
+
+
+
   }
