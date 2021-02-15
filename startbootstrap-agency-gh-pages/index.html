@@ -28,10 +28,12 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page-top">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Propagación">Así se propaga</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Propagación">Propagación</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Situación">Situación</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Estadisticas</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipo de trabajo</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#remedios">Remedios</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Estadísticas</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipo</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Referencias">Referencias</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Registro</a></li>
                     </ul>
                 </div>
@@ -42,6 +44,7 @@
             <div class="container">
                 <div class="masthead-subheading">El Peligro del</div>
                 <div class="masthead-heading text-uppercase">CORONAVIRUS</div>
+                <div class="masthead-subheading">Por Carlos Rodríguez García y Luis Roberto García García 5C</div>
             </div>
 
         </header>
@@ -49,7 +52,7 @@
         <section class="page-section" id="Propagación">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">asi se propaga el covid</h2>
+                    <h2 class="section-heading text-uppercase">así se propaga el covid(video)</h2>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/NlMeY112kug" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <h3 class="section-subheading text-muted" style="justify"><p>COVID-19 ha demostrado ser un virus que se transmite con mucha facilidad y de manera sostenida, lo que aumenta la probabilidad de que se manifieste un brote por contagio comunitario.
 
@@ -93,7 +96,7 @@
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="situacion">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center" id="remedios">
                     <h1 class="section-heading text-uppercase">remedios caseros</h1>
                     <h2 class="section-subheading text-muted">Para fortalecer el sistema inmunológico.</h2>
                     <h3 class="section-subheading text-muted">Puedes darle clic a las imágenes.</h3>
@@ -190,7 +193,7 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h1 class="section-heading text-uppercase">Estadísticas del covid(Mapa de propagacion del virus por el mundo)</h1>
+                    <h1 class="section-heading text-uppercase">Estadísticas del covid(Mapa de propagación del virus por el mundo)</h1>
                     <h2 class="section-subheading text-muted">(Como es una API tarda un poco en actualizar)</h2>
                 <iframe width="100%;" height="950" src="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" data-gtm-yt-inspected-8907555_20="true"> </iframe>
             </div>
@@ -234,10 +237,9 @@
                             <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/charlesRg95/!"target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </div>
                     </div>
-
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"><h2>Referencias de información buscada:</h2></p>
-<ol id="Referencias">
+                    <div class="col-lg-8 mx-auto text-center"id="Referencias"><p class="large text-muted"><h2>Referencias de información buscada:</h2></p>
+<ol>
 <li>video de explicación del coronavirus de youtube:</li><a href="https://www.youtube.com/embed/NlMeY112kug" target="_blank">como se propaga</a>
 <li>situación de vacunación en méxico:</li><a href="https://www.milenio.com/politica/cofepris-autoriza-emergencias-vacuna-anticovid-19-pfizer" target="_blank">Vacunas</a>
 <li>Remedios Caeros para el sistema inmunológico:</li><a href="https://mamaslatinas.com/healthy-you/150571-remedios-caseros-para-reforzar-sistema-inmunologico" target="_blank">página 1</a><br>
@@ -256,17 +258,17 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Registrese para mas detalles</h2>
-                    <h3 class="section-subheading text-muted">Sus datos estan protegidos, el relleno del formulario sera completamente anónimo. </h3>
+                    <h1 class="section-heading text-uppercase">Regístrese para más detalles</h1>
+                    <h2 class="section-subheading text-muted">Sus datos estan protegidos, el relleno del formulario sera completamente anónimo. </h2>
                 </div>
 
 
                 <section class="form-register">
                     <form action="https://www.who.int/es/" method="POST" class="formulario-register" onsubmit="return validar();">
                       <h4>Formulario de Registro</h4>
-                      Nombres:<input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre" >
-                      Apellidos:<input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos" >
-                     Telefono: <input class="controls" type="text" name="telefonos" id="telefonos" placeholder="Ingrese su telefono" >
+                      Nombre(s):<input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su(s) nombre(s)" >
+                      Apellido(s):<input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su(s) apellido(s)" >
+                     Teléfono: <input class="controls" type="text" name="telefonos" id="telefonos" placeholder="Ingrese su telefono" >
                       Correo:<input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo Electronico" required>
                       Password:<input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Password" >
 
@@ -284,12 +286,6 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-left">Copyright © una subdivisión de PANDEMIX 2021</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        No hay redes sociales del proyecto
-                    </div>
                     <div class="col-lg-4 text-lg-right">
                         Gracias por visitar nuestro sitio web
                     </div>
